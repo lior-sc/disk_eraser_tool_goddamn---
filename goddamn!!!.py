@@ -14,8 +14,10 @@ good luck and goddamn! https://youtu.be/PTqtrGBYpxQ
 
 import shutil
 
-tot,used,free=shutil.disk_usage("/")
-print("free space on disk: {:4.0f} GB ({} bytes)".format(free/1e9, free))
+total, used, free=shutil.disk_usage("/")
+print("total space on disk: {:4.0f} GB ({} bytes)".format(total/1e9, total))
+print("used space on disk: {:4.0f} GB ({} bytes)".format(used/1e9, used))
+print("free space on disk: {:4.0f} GB ({} bytes)\n".format(free/1e9, free))
 print("how many bytes should we wipe:")
 try:
     number_of_bytes = int(input())
