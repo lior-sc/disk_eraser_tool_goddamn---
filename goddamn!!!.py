@@ -15,19 +15,20 @@ good luck and goddamn! https://youtu.be/PTqtrGBYpxQ
 import shutil
 
 total, used, free=shutil.disk_usage("/")
-print("total space on disk: {:4.0f} GB ({} bytes)".format(total/1e9, total))
-print("used space on disk: {:4.0f} GB ({} bytes)".format(used/1e9, used))
-print("free space on disk: {:4.0f} GB ({} bytes)\n".format(free/1e9, free))
-print("how many bytes should we wipe:")
+print("total space on disk: {:4.0f} MB ({} bytes)".format(total/1e6, total))
+print("used space on disk: {:4.0f} MB ({} bytes)".format(used/1e6, used))
+print("free space on disk: {:4.0f} MB ({} bytes)\n".format(free/1e6, free))
+print("how many MB should we wipe:")
 try:
-    number_of_bytes = int(input())
+    number_of_MB=int(input())
+    number_of_bytes = int(number_of_MB*1e6)
 except:
     print("bad input. closing program")
 
-print("number of bytes entered is: {} [bytes]".format(number_of_bytes))
+print("number of MB entered is: {} [bytes]".format(number_of_MB))
 
 if(number_of_bytes < int(free) and number_of_bytes > 0):
-    print("Creating required file. goddamn!!!\n")
+    print("\nCreating required file. goddamn!!!\n")
     
     with open("goddamn!!!.txt", "wb") as binary_file:
         byte_2_write = b'goddamn!!!'
@@ -35,10 +36,10 @@ if(number_of_bytes < int(free) and number_of_bytes > 0):
         for i in range(int(number_of_bytes/10)):
             binary_file.write(byte_2_write)
             
-            if(i%1e7 == 0):
+            if(i%1e7 == 0 and i>0):
                 print("{} MB written".format(int(i*1e-5)),end= "\n")
         
-        print("\n\nFinished!")
+        print("File created! wrote {:6.3f} MB\n".format(number_of_bytes/1e6))
         binary_file.close()
     
         
