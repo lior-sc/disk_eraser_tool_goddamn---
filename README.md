@@ -10,4 +10,4 @@ of the drive.
 I've used this code in order to sell an old computer without compromising my data, which
 was present on the hard drive prior to formatting it
 
-good luck and goddamn! https://youtu.be/PTqtrGBYpxQ
+good luck and [goddamn!!!](https://youtu.be/PTqtrGBYpxQ)
